@@ -23,7 +23,7 @@ const Navbar = () => {
     <header className="shadow-md w-full fixed top-0 left-0 bg-white">
       <nav className="md:flex items-center justify-between px-7 py-4 md:px-10 lg:container lg:mx-auto p-4">
         {/* ToogleMenu */}
-        <div onClick={handleToggleMenu} className="md:hidden ">
+        <div onClick={handleToggleMenu} className="md:hidden cursor-pointer">
           {menuIcon ? (
             <AiOutlineClose size={35} />
           ) : (
@@ -38,10 +38,9 @@ const Navbar = () => {
         </Link>
 
         <ul
-          className={`md:flex md-items-center md:pb-0 pb-12 ${
-            menuIcon ? "hidden md:flex" : ""
-          }`}
-        >
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all ease-in duration-500 ${
+            menuIcon ? "top-20 opacity-100" : "top-[-490px]"} md:opacity-100 `
+        }>
           {NAV_LINKS.map((link, index) => (
             <li key={index} className="md:ml-8 text-xl uppercase md:my-0 my-7">
               <Link
