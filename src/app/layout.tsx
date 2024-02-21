@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 // Imports Components
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const mainFontFamily = Poppins({
   subsets: ["latin"],
@@ -21,10 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="h-[5000px]">
-      <body className={'${mainFontFamily.className} bg-pink-900'}>
+    <html lang="pt-BR" className="">
+      <body className={"${mainFontFamily.className} bg-[#3E0637] text-[#FFF]"}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
